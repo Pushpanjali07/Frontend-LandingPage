@@ -122,7 +122,8 @@ body {
 /* ===== #img2 fix for laptop + responsive ===== */
 #img2 {
     flex-shrink: 0;      /* prevent shrinking */
-    max-width: 400px;    /* keeps image within limits */
+    left:766px;
+    right:190px/* keeps image within limits */
     width: 633.87px;
     height: 727.37px;
     align-self: flex-start;
