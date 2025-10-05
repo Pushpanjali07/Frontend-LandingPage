@@ -123,8 +123,8 @@ body {
 #img2 {
     flex-shrink: 0;      /* prevent shrinking */
     max-width: 400px;    /* keeps image within limits */
-    width: auto;
-    height: auto;
+    width: 633.87px;
+    height: 727.37px;
     align-self: flex-start;
 }
 
