@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 72vh; /* reduced from 909px for better responsiveness */
+    min-height: 72vh; /* improved responsiveness */
 }
 
 #nav {
@@ -160,7 +160,6 @@ body {
 }
 
 #part1-1 {
-    align-item: center;
     display: inline-block;
     padding: 10px 20px;
     background-color: rgba(253,146,164,0.3);
@@ -193,7 +192,7 @@ body {
 }
 
 #card1 img, #card2 img, #card3 img, #card4 img {
-    width: 80px; /* prevent stretching */
+    width: 80px;
     height: auto;
     margin-bottom: 12px;
 }
@@ -217,30 +216,6 @@ body {
         flex: 1 1 calc(50% - 18px);
     }
 }
-/* Keep #img2 in its intended place on large screens */
-@media (min-width: 1025px) {
-    #color2 {
-        display: flex;
-        flex-wrap: nowrap;       /* prevent wrapping */
-        justify-content: space-between;
-        align-items: flex-start; /* align to top */
-        gap: 20px;               /* optional spacing */
-    }
-
-    #content {
-        flex: 1;                 /* take remaining space */
-        max-width: 600px;        /* prevent stretching too wide */
-    }
-
-    #img2 {
-        flex-shrink: 0;          /* prevent image from shrinking */
-        width: auto;
-        max-width: 400px;        /* adjust size as needed */
-        height: auto;
-        align-self: flex-start;  /* keep it aligned to top of #color2 */
-    }
-}
-
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -279,6 +254,66 @@ body {
         text-align: center;
     }
 }
+
+/* ===== Fix #img2 Position Across All Screens ===== */
+
+/* Large screens / laptops */
+@media (min-width: 1025px) {
+    #color2 {
+        display: flex;
+        flex-wrap: nowrap;       /* keep content and image side by side */
+        justify-content: space-between;
+        align-items: flex-start; /* align items to top */
+        gap: 20px;
+    }
+
+    #content {
+        flex: 1;                 /* content takes remaining space */
+        max-width: 600px;        /* prevent stretching too wide */
+    }
+
+    #img2 {
+        flex-shrink: 0;          /* prevent image from shrinking */
+        width: auto;
+        max-width: 400px;        /* adjust as needed */
+        height: auto;
+        align-self: flex-start;  /* stay aligned to top */
+    }
+}
+
+/* Medium screens / tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #color2 {
+        display: flex;
+        flex-wrap: wrap;         /* allow wrapping for smaller screens */
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    #img2 {
+        max-width: 300px;
+        width: auto;
+        height: auto;
+        align-self: center;
+    }
+}
+
+/* Small screens / mobile */
+@media (max-width: 768px) {
+    #color2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #img2 {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        align-self: center;
+    }
+}
+
 
 
 
