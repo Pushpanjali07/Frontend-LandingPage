@@ -217,6 +217,30 @@ body {
         flex: 1 1 calc(50% - 18px);
     }
 }
+/* Keep #img2 in its intended place on large screens */
+@media (min-width: 1025px) {
+    #color2 {
+        display: flex;
+        flex-wrap: nowrap;       /* prevent wrapping */
+        justify-content: space-between;
+        align-items: flex-start; /* align to top */
+        gap: 20px;               /* optional spacing */
+    }
+
+    #content {
+        flex: 1;                 /* take remaining space */
+        max-width: 600px;        /* prevent stretching too wide */
+    }
+
+    #img2 {
+        flex-shrink: 0;          /* prevent image from shrinking */
+        width: auto;
+        max-width: 400px;        /* adjust size as needed */
+        height: auto;
+        align-self: flex-start;  /* keep it aligned to top of #color2 */
+    }
+}
+
 
 /* Mobile */
 @media (max-width: 768px) {
