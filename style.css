@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 909px;
+    min-height: 72vh; /* reduced from 909px for better responsiveness */
 }
 
 #nav {
@@ -21,6 +21,7 @@ body {
     height: 100px;
     width: 100%;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 #logo img {
@@ -34,6 +35,7 @@ body {
     gap: 24px;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 #nav-links a {
@@ -73,7 +75,7 @@ body {
 }
 
 #content1 p {
-    font-size: 62px;
+    font-size: clamp(32px, 5vw, 62px); /* responsive font size */
     font-weight: bold;
 }
 
@@ -86,7 +88,7 @@ body {
 }
 
 #content2 p {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     line-height: 1.5;
 }
 
@@ -120,6 +122,7 @@ body {
 #img2 {
     max-width: 100%;
     height: auto;
+    margin-top: 20px;
 }
 
 #rating {
@@ -130,16 +133,17 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 #rating p {
-    font-size: 64px;
+    font-size: clamp(24px, 6vw, 64px); /* responsive font size */
     color: rgba(28,176,152,1);
     margin: 0;
 }
 
 #star p {
-    font-size: 24px;
+    font-size: clamp(14px, 2vw, 24px);
     font-weight: 600;
 }
 
@@ -164,7 +168,7 @@ body {
 }
 
 #part1-2 p {
-    font-size: 26px;
+    font-size: clamp(18px, 2vw, 26px);
     text-align: center;
     margin-top: 20px;
 }
@@ -174,6 +178,7 @@ body {
     flex-wrap: wrap;
     gap: 18px;
     margin-top: 30px;
+    justify-content: center;
 }
 
 #card1, #card2, #card3, #card4 {
@@ -183,98 +188,73 @@ body {
     flex: 1 1 calc(25% - 18px);
     box-sizing: border-box;
     padding: 20px;
+    max-width: 280px;
 }
 
 #card1 img, #card2 img, #card3 img, #card4 img {
-    width: 100%;
+    width: 80px; /* prevent stretching */
     height: auto;
+    margin-bottom: 12px;
 }
 
 #card1 p, #card2 p, #card3 p, #card4 p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* ===== Media Queries ===== */
 
-/* ===== Tablet (≤1024px) ===== */
+/* Tablet */
 @media (max-width: 1024px) {
     #content1 p {
         font-size: 48px;
     }
-
     #content2 p {
         font-size: 15px;
     }
-
     #card1, #card2, #card3, #card4 {
         flex: 1 1 calc(50% - 18px);
     }
-
-    #nav-links ul {
-        gap: 16px;
-    }
-
-    #bt {
-        padding: 12px 20px;
-        font-size: 16px;
-    }
 }
 
-/* ===== Mobile (≤768px) ===== */
+/* Mobile */
 @media (max-width: 768px) {
     #nav {
         flex-direction: column;
+        align-items: flex-start;
         height: auto;
-        padding: 20px;
         gap: 10px;
     }
-
     #nav-links ul {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #content1 p {
-        font-size: 36px;
-    }
-
-    #content2 {
-        max-width: 100%;
-    }
-
-    #btn1, #btn2 {
+        gap: 12px;
         width: 100%;
-        text-align: center;
     }
-
     #color2 {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 20px;
     }
-
-    #rating {
+    #content {
         flex-direction: column;
         align-items: center;
-        gap: 8px;
     }
-
-    #part1-2 p {
-        font-size: 20px;
+    #content2 {
+        max-width: 100%;
     }
-
+    #box2 {
+        padding: 40px 5%;
+    }
     #card1, #card2, #card3, #card4 {
         flex: 1 1 100%;
+        max-width: 100%;
+    }
+    #content1 p {
+        font-size: clamp(24px, 5vw, 40px);
+        text-align: center;
     }
 }
+
 
 
 
