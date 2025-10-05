@@ -525,3 +525,225 @@ body {
     font-size: 20px;
     color: rgba(0, 0, 0, 1);
 }
+/* ===============================
+   Responsive Overrides Only
+   (Keep all existing styles intact)
+=================================*/
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    #nav, #box1, #box2 {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    #logo {
+        left: 20px;
+        top: 10px;
+        width: 180px;
+        height: auto;
+    }
+
+    #nav-element {
+        left: 0;
+        top: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #nav-links ul {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    #quote {
+        left: 0;
+        top: auto;
+        margin-top: 10px;
+    }
+
+    #content {
+        flex-wrap: wrap;
+        width: 90%;
+        left: 5%;
+        top: auto;
+    }
+
+    #content1 p {
+        font-size: 40px;
+    }
+
+    #content2 {
+        width: 100%;
+        top: auto;
+    }
+
+    #content2 p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .btns {
+        flex-direction: column;
+        top: auto;
+    }
+
+    #btn1, #btn2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #img2 {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+    }
+
+    #rating {
+        width: 90%;
+        left: 5%;
+        top: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #new-content {
+        width: 90%;
+        left: 5%;
+    }
+
+    #part1-1 {
+        left: 0;
+        margin: 0 auto;
+    }
+
+    #part1-2 p {
+        position: relative;
+        top: 0;
+        font-size: 20px;
+    }
+
+    #part2 {
+        flex-direction: column;
+        left: 0;
+        top: 0;
+    }
+
+    #card1, #card2, #card3, #card4 {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #card1 img, #card2 img, #card3 img, #card4 img {
+        width: 80%;
+        height: auto;
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #card1 p, #card2 p, #card3 p, #card4 p,
+    #card1 #p1, #card2 #p2, #card3 #p3, #card4 #p4 {
+        font-size: 16px;
+        top: auto;
+        left: 0;
+    }
+}
+
+/* Mobile: <768px */
+@media (max-width: 767px) {
+    #nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    #nav-element {
+        flex-direction: column;
+        top: auto;
+        left: 0;
+        width: 100%;
+    }
+
+    #nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    #quote {
+        left: 0;
+        top: auto;
+        margin-top: 10px;
+    }
+
+    #bt {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    #content {
+        flex-direction: column;
+        width: 95%;
+        left: 2.5%;
+    }
+
+    #content1 p {
+        font-size: 28px;
+    }
+
+    #content2 p {
+        font-size: 14px;
+    }
+
+    .btns {
+        flex-direction: column;
+    }
+
+    #btn1, #btn2 {
+        width: 100%;
+    }
+
+    #rating {
+        flex-direction: column;
+        width: 90%;
+        left: 5%;
+        margin: 10px auto;
+    }
+
+    #part1-2 p {
+        font-size: 16px;
+    }
+
+    #card1, #card2, #card3, #card4 {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    #card1 img, #card2 img, #card3 img, #card4 img {
+        width: 100%;
+        height: auto;
+    }
+
+    #card1 p, #card2 p, #card3 p, #card4 p,
+    #card1 #p1, #card2 #p2, #card3 #p3, #card4 #p4 {
+        font-size: 14px;
+    }
+}
