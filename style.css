@@ -1,12 +1,11 @@
-/* ===== Responsive Design ===== */
+/* ===== Responsive Design (Safe Version) ===== */
 
 /* Tablets (max-width: 1024px) */
 @media (max-width: 1024px) {
     #color2 {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: center;
-        gap: 30px;
     }
 
     #content {
@@ -15,32 +14,24 @@
     }
 
     #content1 p {
-        font-size: 40px;
+        font-size: 45px;
     }
 
     #content2 p {
         font-size: 18px;
         line-height: 1.5;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     #img2 {
         width: 60%;
+        margin-top: 20px;
     }
 
     #rating {
-        top: 10px;
-        right: 10px;
-    }
-
-    #nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    #nav-links ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        position: static;
+        margin: 10px auto;
     }
 
     #part2 {
@@ -48,10 +39,26 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
+
+    #part1-2 p {
+        font-size: 20px;
+        text-align: center;
+    }
 }
 
 /* Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
     #color2 {
         flex-direction: column;
         padding: 40px 5%;
@@ -64,6 +71,14 @@
 
     #content2 p {
         font-size: 16px;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
     #img2 {
@@ -71,42 +86,18 @@
         margin-top: 20px;
     }
 
-    #rating {
-        position: static;
-        margin: 0 auto 20px;
-    }
-
-    .btns {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    #nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-links ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
     #part2 {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    #part1-2 p {
-        font-size: 18px;
-        text-align: center;
+        gap: 25px;
     }
 
     #card1 img, #card2 img, #card3 img, #card4 img {
         width: 80%;
-        height: auto;
         margin: 0 auto;
+    }
+
+    #part1-2 p {
+        font-size: 18px;
     }
 }
 
@@ -133,6 +124,7 @@
         font-size: 14px;
     }
 }
+
 
 
 
