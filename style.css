@@ -1,129 +1,281 @@
-/* ===== Responsive Design (Safe Version) ===== */
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+}
 
-/* Tablets (max-width: 1024px) */
+/* ===== Box 1 (Hero Section) ===== */
+#box1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 909px;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#logo img {
+    width: 180px;
+    height: auto;
+}
+
+#nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#bt {
+    padding: 14px 22px;
+    border-radius: 30px;
+    background-color: rgba(250,18,57,1);
+    color: #fff;
+    border: none;
+    box-shadow: 0px 0px 10px 2px rgba(252,78,106,1);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ===== Hero Content ===== */
+#color2 {
+    background: linear-gradient(to bottom left, #FFE7EB, #FFBFCA);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 5%;
+    box-sizing: border-box;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 620px;
+}
+
+#content1 p {
+    font-size: 62px;
+    font-weight: bold;
+}
+
+.textColor {
+    color: rgba(250,18,57,1);
+}
+
+#content2 {
+    max-width: 485px;
+}
+
+#content2 p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.btns {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#btn1, #btn2 {
+    border-radius: 30px;
+    padding: 14px 22px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btn1 {
+    border: 1px solid rgb(253,2,44);
+    color: rgba(250,18,57,1);
+    background: transparent;
+}
+
+#btn2 {
+    background-color: rgba(250,18,57,1);
+    border: none;
+    color: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(252,78,106,1);
+}
+
+#img2 {
+    max-width: 100%;
+    height: auto;
+}
+
+#rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#rating p {
+    font-size: 64px;
+    color: rgba(28,176,152,1);
+    margin: 0;
+}
+
+#star p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ===== Box 2 (Cards Section) ===== */
+#box2 {
+    background-color: #fff;
+    padding: 50px 5%;
+    box-sizing: border-box;
+}
+
+#new-content {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+#part1-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(253,146,164,0.3);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#part1-2 p {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#part2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+#card1, #card2, #card3, #card4 {
+    background-color: #fff;
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    flex: 1 1 calc(25% - 18px);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#card1 img, #card2 img, #card3 img, #card4 img {
+    width: 100%;
+    height: auto;
+}
+
+#card1 p, #card2 p, #card3 p, #card4 p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* ===== Tablet (≤1024px) ===== */
 @media (max-width: 1024px) {
-    #color2 {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-    }
-
-    #content {
-        flex: 1 1 100%;
-        align-items: center;
-    }
-
     #content1 p {
-        font-size: 45px;
+        font-size: 48px;
     }
 
     #content2 p {
-        font-size: 18px;
-        line-height: 1.5;
-        max-width: 90%;
-        margin: 0 auto;
+        font-size: 15px;
     }
 
-    #img2 {
-        width: 60%;
-        margin-top: 20px;
+    #card1, #card2, #card3, #card4 {
+        flex: 1 1 calc(50% - 18px);
     }
 
-    #rating {
-        position: static;
-        margin: 10px auto;
+    #nav-links ul {
+        gap: 16px;
     }
 
-    #part2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    #part1-2 p {
-        font-size: 20px;
-        text-align: center;
+    #bt {
+        padding: 12px 20px;
+        font-size: 16px;
     }
 }
 
-/* Mobile Devices (max-width: 768px) */
+/* ===== Mobile (≤768px) ===== */
 @media (max-width: 768px) {
     #nav {
         flex-direction: column;
+        height: auto;
+        padding: 20px;
         gap: 10px;
     }
 
     #nav-links ul {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
     }
 
-    #color2 {
+    #content {
         flex-direction: column;
-        padding: 40px 5%;
+        align-items: center;
         text-align: center;
     }
 
     #content1 p {
-        font-size: 32px;
+        font-size: 36px;
     }
 
-    #content2 p {
-        font-size: 16px;
-        max-width: 95%;
-        margin: 0 auto;
+    #content2 {
+        max-width: 100%;
     }
 
-    .btns {
+    #btn1, #btn2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #color2 {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-    }
-
-    #img2 {
-        width: 80%;
-        margin-top: 20px;
-    }
-
-    #part2 {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    #card1 img, #card2 img, #card3 img, #card4 img {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    #part1-2 p {
-        font-size: 18px;
-    }
-}
-
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-    #content1 p {
-        font-size: 26px;
-    }
-
-    #content2 p {
-        font-size: 14px;
-    }
-
-    #bt, #btn1, #btn2 {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
-    #img2 {
-        width: 90%;
+        text-align: center;
     }
 
     #rating {
-        font-size: 14px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #part1-2 p {
+        font-size: 20px;
+    }
+
+    #card1, #card2, #card3, #card4 {
+        flex: 1 1 100%;
     }
 }
+
 
 
 
