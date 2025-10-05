@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 72vh; /* improved responsiveness */
+    min-height: 909px;
 }
 
 #nav {
@@ -21,7 +21,6 @@ body {
     height: 100px;
     width: 100%;
     box-sizing: border-box;
-    flex-wrap: wrap;
 }
 
 #logo img {
@@ -35,7 +34,6 @@ body {
     gap: 24px;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
 }
 
 #nav-links a {
@@ -67,15 +65,17 @@ body {
     box-sizing: border-box;
 }
 
+/* Ensure #img2 stays aligned on laptop */
 #content {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     max-width: 620px;
+    flex: 1 1 auto; /* allow it to take space properly */
 }
 
 #content1 p {
-    font-size: clamp(32px, 5vw, 62px); /* responsive font size */
+    font-size: 62px;
     font-weight: bold;
 }
 
@@ -88,7 +88,7 @@ body {
 }
 
 #content2 p {
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -119,12 +119,16 @@ body {
     box-shadow: 0px 0px 10px 2px rgba(252,78,106,1);
 }
 
+/* ===== #img2 fix for laptop + responsive ===== */
 #img2 {
-    max-width: 100%;
+    flex-shrink: 0;      /* prevent shrinking */
+    max-width: 400px;    /* keeps image within limits */
+    width: auto;
     height: auto;
-    margin-top: 20px;
+    align-self: flex-start;
 }
 
+/* ===== Rating Section ===== */
 #rating {
     display: flex;
     align-items: center;
@@ -137,13 +141,13 @@ body {
 }
 
 #rating p {
-    font-size: clamp(24px, 6vw, 64px); /* responsive font size */
+    font-size: 64px;
     color: rgba(28,176,152,1);
     margin: 0;
 }
 
 #star p {
-    font-size: clamp(14px, 2vw, 24px);
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -168,7 +172,7 @@ body {
 }
 
 #part1-2 p {
-    font-size: clamp(18px, 2vw, 26px);
+    font-size: 26px;
     text-align: center;
     margin-top: 20px;
 }
@@ -178,7 +182,6 @@ body {
     flex-wrap: wrap;
     gap: 18px;
     margin-top: 30px;
-    justify-content: center;
 }
 
 #card1, #card2, #card3, #card4 {
@@ -188,17 +191,15 @@ body {
     flex: 1 1 calc(25% - 18px);
     box-sizing: border-box;
     padding: 20px;
-    max-width: 280px;
 }
 
 #card1 img, #card2 img, #card3 img, #card4 img {
     width: 100%;
     height: auto;
-    margin-bottom: 12px;
 }
 
 #card1 p, #card2 p, #card3 p, #card4 p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
@@ -214,6 +215,11 @@ body {
     }
     #card1, #card2, #card3, #card4 {
         flex: 1 1 calc(50% - 18px);
+    }
+    #img2 {
+        max-width: 300px;
+        align-self: center;
+        margin-top: 20px;
     }
 }
 
@@ -250,69 +256,16 @@ body {
         max-width: 100%;
     }
     #content1 p {
-        font-size: clamp(24px, 5vw, 40px);
+        font-size: 40px;
         text-align: center;
     }
-}
-
-/* ===== Fix #img2 Position Across All Screens ===== */
-
-/* Large screens / laptops */
-@media (min-width: 1025px) {
-    #color2 {
-        display: flex;
-        flex-wrap: nowrap;       /* keep content and image side by side */
-        justify-content: space-between;
-        align-items: flex-start; /* align items to top */
-        gap: 20px;
-    }
-
-    #content {
-        flex: 1;                 /* content takes remaining space */
-        max-width: 600px;        /* prevent stretching too wide */
-    }
-
-    #img2 {
-        flex-shrink: 0;          /* prevent image from shrinking */
-        width: auto;
-        max-width: 400px;        /* adjust as needed */
-        height: auto;
-        align-self: flex-start;  /* stay aligned to top */
-    }
-}
-
-/* Medium screens / tablets */
-@media (max-width: 1024px) and (min-width: 769px) {
-    #color2 {
-        display: flex;
-        flex-wrap: wrap;         /* allow wrapping for smaller screens */
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    #img2 {
-        max-width: 300px;
-        width: auto;
-        height: auto;
-        align-self: center;
-    }
-}
-
-/* Small screens / mobile */
-@media (max-width: 768px) {
-    #color2 {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
     #img2 {
         max-width: 100%;
-        width: auto;
-        height: auto;
         align-self: center;
+        margin-top: 20px;
     }
 }
+
 
 
 
