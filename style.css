@@ -10,8 +10,9 @@ body {
 #box1 {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 909px;
+    width: 1440px;
+    height: 909px;
+
 }
 
 #nav {
@@ -20,8 +21,9 @@ body {
     align-items: center;
     padding: 0 5%;
     height: 100px;
-    width: 100%;
+    width: 1440px;
     box-sizing: border-box;
+
 }
 
 #logo img {
@@ -60,24 +62,50 @@ body {
     background: linear-gradient(to bottom left, #FFE7EB, #FFBFCA);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
     align-items: flex-start;
-    padding: 40px 5%;
+    
     box-sizing: border-box;
+    height: 809px;
 }
 
 /* Ensure #img2 stays aligned on laptop */
 #content {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    left: 100px;
+    top: 150px;
+    
     max-width: 620px;
+    height: 510px;
     flex: 1 1 auto; /* allow it to take space properly */
+}
+#content1 img{
+    position: absolute;
+    left: 0;
+    top: 192px;
+    width: 363px;
+    height: 17px;
 }
 
 #content1 p {
     font-size: 62px;
     font-weight: bold;
+    width: 620px;
+    position: relative;
+    top: 0%;
+    left: 0%;
+
+
+}
+#content1{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 620px;
+    height: 252px;
 }
 
 .textColor {
@@ -85,12 +113,19 @@ body {
 }
 
 #content2 {
+    
     max-width: 485px;
+    left: 0px;
+    top: 290px;
+
 }
 
 #content2 p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 34px;
+    width: 485px;
+    
+
 }
 
 .btns {
@@ -122,11 +157,12 @@ body {
 
 /* ===== #img2 fix for laptop + responsive ===== */
 #img2 {
+    position: absolute;
     flex-shrink: 0;      /* prevent shrinking */
     left:766px;
-    right:190px/* keeps image within limits */
+    top:190px;/* keeps image within limits */
     width: 633.87px;
-    height: 727.37px;
+    height: 720px;
     align-self: flex-start;
 }
 
@@ -134,6 +170,9 @@ body {
 #rating {
     display: flex;
     align-items: center;
+    position: relative;
+    top: 470px;
+    left: 137px;
     gap: 20px;
     background-color: #fff;
     padding: 10px 20px;
@@ -158,6 +197,7 @@ body {
     background-color: #fff;
     padding: 50px 5%;
     box-sizing: border-box;
+    height: 708px;
 }
 
 #new-content {
@@ -167,10 +207,14 @@ body {
 
 #part1-1 {
     display: inline-block;
+    position: relative;
     padding: 10px 20px;
     background-color: rgba(253,146,164,0.3);
     font-weight: 600;
     font-size: 18px;
+    justify-content: center;
+    left: 543px;
+    top: 0px;
 }
 
 #part1-2 p {
