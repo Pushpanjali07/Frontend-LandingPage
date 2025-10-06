@@ -356,6 +356,45 @@ body {
     }
 }
 
+/* ===== Responsive Navigation ===== */
+#menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+#menu-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Default nav links (desktop) */
+#nav-links ul {
+  display: flex;
+  gap: 30px;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  #nav-links ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  #nav-links ul.show {
+    display: flex;
+  }
+}
 
 
 
