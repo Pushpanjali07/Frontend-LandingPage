@@ -8,7 +8,7 @@ body {
     padding: 0;
     font-family: 'Figtree', sans-serif;
     max-width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
     line-height: 1.6;
 }
 
@@ -65,7 +65,7 @@ body {
     color: rgba(250,18,57,1);
 }
 
-#bt {
+#quote #bt {
     padding: 14px 22px;
     border-radius: 30px;
     background-color: rgba(250,18,57,1);
@@ -85,15 +85,15 @@ body {
 /* ===== Hero Content ===== */
 #color2 {
     background: linear-gradient(to bottom left, #FFE7EB, #FFBFCA);
+    position: relative; /* Crucial for absolute child positioning */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
     padding: 0 5%;
-    position: relative;
     height: auto;
     min-height: 809px;
     gap: 30px;
+    overflow: hidden; /* Prevent image overflow */
 }
 
 #content {
@@ -104,16 +104,24 @@ body {
     flex: 1;
     max-width: 620px;
     padding-top: 150px;
-    padding-left: 5%;
+    z-index: 2; /* Ensure text above image if overlap */
+}
+
+#content1 {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    height: auto;
 }
 
 #content1 img {
     position: absolute;
     left: 0;
-    top: 192px;
+    bottom: -10px; /* Position as underline below text */
     width: 363px;
     height: 17px;
     max-width: 100%;
+    z-index: 1;
 }
 
 #content1 p {
@@ -123,13 +131,8 @@ body {
     max-width: 620px;
     margin: 0;
     line-height: 1.2;
-}
-
-#content1 {
     position: relative;
-    width: 100%;
-    max-width: 620px;
-    height: auto;
+    z-index: 2; /* Text above line */
 }
 
 .textColor {
@@ -181,19 +184,19 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hero Image */
+/* Hero Image - Precise positioning for desktop */
 #img2 {
     position: absolute;
-    right: 5%;
-    top: 150px;
+    left: calc(53.125% + 5px); /* Mimics original ~766px in 1440px container, adjusted for padding/gap */
+    top: 190px;
     width: 633.87px;
     height: auto;
-    max-width: 45%;
-    flex-shrink: 0;
+    max-width: 44%; /* Scales down if screen <1440px */
     z-index: 1;
+    flex-shrink: 0;
 }
 
-/* Rating */
+/* Rating - Bottom-right on desktop */
 #rating {
     display: flex;
     align-items: center;
@@ -201,7 +204,6 @@ body {
     background-color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
-    margin: 20px auto;
     max-width: 300px;
     flex-wrap: wrap;
     justify-content: center;
@@ -209,6 +211,7 @@ body {
     position: absolute;
     bottom: 20px;
     right: 5%;
+    z-index: 2;
 }
 
 #rating p {
@@ -255,7 +258,7 @@ body {
     font-weight: 600;
     font-size: 18px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 #part1-2 p {
@@ -281,6 +284,7 @@ body {
     width: 100%;
     height: auto;
     transition: transform 0.2s ease;
+    text-align: center; /* Center card content */
 }
 
 #card1:hover, #card2:hover, #card3:hover, #card4:hover {
@@ -292,24 +296,25 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    display: block; /* Ensure no extra spacing */
 }
 
-#card1 > p:first-of-type, #card2 > p:first-of-type, #card3 > p:first-of-type, #card4 > p:first-of-type {
+#card1 h3, #card2 h3, #card3 h3, #card4 h3 {
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 10px 0;
 }
 
-#card1 > p:last-of-type, #card2 > p:last-of-type, #card3 > p:last-of-type, #card4 > p:last-of-type {
+#card1 p, #card2 p, #card3 p, #card4 p {
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     color: #666;
 }
 
-/* ===== Media Queries ===== */
+/* ===== Media Queries for Responsiveness ===== */
 
-/* Tablet (≤1024px) */
+/* Tablet (≤1024px) - Stack and relative position images */
 @media (max-width: 1024px) {
     #nav {
         padding: 0 3%;
@@ -338,10 +343,11 @@ body {
 
     #content1 img {
         position: relative;
-        top: auto;
+        bottom: auto;
         left: auto;
         width: 80%;
         margin: 0 auto 20px;
+        display: block;
     }
 
     #content2 p {
@@ -351,7 +357,7 @@ body {
 
     #img2 {
         position: relative;
-        right: auto;
+        left: auto;
         top: auto;
         max-width: 80%;
         margin: 0 auto;
@@ -375,16 +381,16 @@ body {
         gap: 15px;
     }
 
-    #card1 > p:first-of-type, #card2 > p:first-of-type, #card3 > p:first-of-type, #card4 > p:first-of-type {
+    #card1 h3, #card2 h3, #card3 h3, #card4 h3 {
         font-size: 18px;
     }
 
-    #card1 > p:last-of-type, #card2 > p:last-of-type, #card3 > p:last-of-type, #card4 > p:last-of-type {
+    #card1 p, #card2 p, #card3 p, #card4 p {
         font-size: 15px;
     }
 }
 
-/* Mobile (≤768px) */
+/* Mobile (≤768px) - Full stack, center images */
 @media (max-width: 768px) {
     #nav {
         flex-direction: column;
@@ -437,37 +443,13 @@ body {
         line-height: 1.1;
     }
 
+    #content1 img {
+        width: 60%;
+        margin: 10px auto;
+    }
+
     #content2 {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    #content2 p {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: center;
-    }
-
-    .btns {
-        justify-content: center;
-        gap: 15px;
-    }
-
-    #btn1, #btn2 {
-        flex: 1;
-        max-width: 150px;
-    }
-
-    #img2 {
-        position: relative;
-        max-width: 100%;
-        height: auto;
-        order: 2;
-        margin-top: 20px;
-    }
-
-    #rating {
-        flex-direction: column
+        max-width: 
 
 
 
