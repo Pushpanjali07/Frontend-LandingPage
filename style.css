@@ -1,12 +1,12 @@
-/* ===== Base Styles (Exact Original for Desktop/Laptop) ===== */
+/* ===== Base Styles (Exact Original for Laptop/Desktop ≥1024px) ===== */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Figtree', sans-serif;
     width: 1440px;
-    max-width: 1440px; /* Center on wider screens */
+    max-width: 1440px; /* Center on ultra-wide screens */
     margin: 0 auto;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; /* Prevent horizontal scroll on all devices */
 }
 
 /* ===== Box 1 (Hero Section) ===== */
@@ -30,7 +30,6 @@ body {
 #logo img {
     width: 180px;
     height: auto;
-    max-width: 100%; /* Scale if needed on smaller views */
 }
 
 #nav-links ul {
@@ -46,11 +45,6 @@ body {
     color: black;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s ease; /* Optional hover */
-}
-
-#nav-links a:hover {
-    color: rgba(250,18,57,1);
 }
 
 #bt {
@@ -62,12 +56,6 @@ body {
     box-shadow: 0px 0px 10px 2px rgba(252,78,106,1);
     font-size: 18px;
     cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.2s ease; /* Optional hover */
-}
-
-#bt:hover {
-    transform: translateY(-2px);
 }
 
 /* ===== Hero Content ===== */
@@ -78,8 +66,7 @@ body {
     align-items: flex-start;
     box-sizing: border-box;
     height: 809px;
-    position: relative; /* For absolute children */
-    overflow: hidden; /* Prevent image overflow on resize */
+    position: relative; /* For absolute positioning */
 }
 
 /* Ensure #img2 stays aligned on laptop */
@@ -101,7 +88,6 @@ body {
     top: 192px;
     width: 363px;
     height: 17px;
-    max-width: 100%; /* Scale on smaller screens */
 }
 
 #content1 p {
@@ -154,7 +140,6 @@ body {
     font-size: 16px;
     cursor: pointer;
     white-space: nowrap;
-    transition: transform 0.2s ease; /* Optional hover */
 }
 
 #btn1 {
@@ -168,10 +153,6 @@ body {
     border: none;
     color: #fff;
     box-shadow: 0px 0px 10px 2px rgba(252,78,106,1);
-}
-
-#btn1:hover, #btn2:hover {
-    transform: translateY(-2px);
 }
 
 /* ===== #img2 fix for laptop + responsive ===== */
@@ -198,7 +179,7 @@ body {
     border-radius: 10px;
     margin-top: 20px;
     flex-wrap: wrap;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for visibility */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 #rating p {
@@ -234,10 +215,6 @@ body {
     width: 100%;
 }
 
-#part1 {
-    text-align: center; /* For mobile centering */
-}
-
 #part1-1 {
     display: inline-block;
     position: relative;
@@ -248,7 +225,7 @@ body {
     justify-content: center;
     left: 543px;
     top: 0px;
-    border-radius: 20px; /* Optional rounding */
+    border-radius: 20px; /* Optional */
 }
 
 #part1-2 p {
@@ -273,8 +250,8 @@ body {
     flex: 1 1 calc(25% - 18px);
     box-sizing: border-box;
     padding: 20px;
+    text-align: center;
     transition: transform 0.2s ease; /* Optional hover */
-    text-align: center; /* Center card text */
 }
 
 #card1:hover, #card2:hover, #card3:hover, #card4:hover {
@@ -284,9 +261,9 @@ body {
 #card1 img, #card2 img, #card3 img, #card4 img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional */
+    border-radius: 10px;
     margin-bottom: 15px;
-    display: block; /* No extra spacing */
+    display: block;
 }
 
 #card1 p:first-of-type, #card2 p:first-of-type, #card3 p:first-of-type, #card4 p:first-of-type {
@@ -302,12 +279,12 @@ body {
     color: #666;
 }
 
-/* ===== Media Queries (Enhanced from Your Original for Perfect Mobile) ===== */
+/* ===== Media Queries ===== */
 
-/* Tablet (Your Original + Minor Fixes) */
+/* Tablet (Your Original + Centering for Navbar/Rating) */
 @media (max-width: 1024px) {
     body {
-        width: 100%; /* Allow full width on tablet */
+        width: 100%;
     }
 
     #box1 {
@@ -317,21 +294,28 @@ body {
 
     #nav {
         width: 100%;
-        padding: 0 3%; /* Slightly less padding */
+        padding: 0 3%;
+        justify-content: center;
+        gap: 10px; /* Space between elements */
+    }
+
+    #nav-links ul {
+        gap: 16px;
     }
 
     #color2 {
         height: auto;
-        min-height: 600px; /* Maintain some height */
+        min-height: 600px;
         padding: 0 3%;
     }
 
     #content {
         left: 0;
-        top: 50px; /* Reduce top offset */
+        top: 50px;
         max-width: 100%;
         height: auto;
         padding: 0 5%;
+        gap: 20px;
     }
 
     #content1 p {
@@ -381,10 +365,15 @@ body {
         left: auto;
         margin: 20px auto;
         max-width: 250px;
+        padding: 8px 16px;
     }
 
     #rating p {
         font-size: 48px;
+    }
+
+    #star p {
+        font-size: 20px;
     }
 
     #box2 {
@@ -394,7 +383,7 @@ body {
 
     #part1-1 {
         left: 0;
-        margin: 0 auto; /* Center */
+        margin: 0 auto 20px;
         display: block;
     }
 
@@ -411,4 +400,211 @@ body {
         font-size: 16px;
     }
 
-    #card1 p:last-of-type, #card2 p:last-of-type, #card3 p:last-of
+    #card1 p:last-of-type, #card2 p:last-of-type, #card3 p:last-of-type, #card4 p:last-of-type {
+        font-size: 15px;
+    }
+}
+
+/* Mobile (Enhanced Focus on Navbar & Rating + Your Original Stacking) */
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    #box1 {
+        width: 100%;
+        height: auto;
+    }
+
+    #nav {
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center all navbar elements */
+        justify-content: center;
+        height: auto; /* Auto height for stacking */
+        padding: 20px 5%; /* More padding for touch */
+        gap: 15px; /* Space between logo, button, links */
+        width: 100%;
+    }
+
+    #logo {
+        order: 1; /* Logo first */
+    }
+
+    #quote {
+        order: 2; /* Button second */
+        width: 100%;
+        max-width: 200px; /* Limit button width */
+        text-align: center;
+    }
+
+    #nav-element {
+        order: 3; /* Links last */
+        width: 100%;
+    }
+
+    #nav-links ul {
+        flex-direction: column; /* Vertical links */
+        gap: 12px; /* Smaller gap for mobile */
+        width: 100%;
+        text-align: center; /* Center links */
+        padding: 0;
+        margin: 0;
+    }
+
+    #nav-links a {
+        font-size: 16px; /* Slightly smaller for mobile */
+        display: block; /* Full width for touch */
+        padding: 8px 0; /* Touch-friendly padding */
+    }
+
+    #bt {
+        width: 100%; /* Full width on mobile */
+        max-width: 200px;
+        font-size: 16px; /* Match link size */
+    }
+
+    #color2 {
+        flex-direction: column; /* Stack hero content */
+        align-items: center;
+        height: auto;
+        min-height: 500px; /* Flexible min height */
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    #content {
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 0;
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        gap: 15px;
+        order: 1; /* Text first */
+    }
+
+    #content1 p {
+        font-size: 40px;
+        text-align: center;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    #content1 img {
+        position: relative; /* Relative for mobile */
+        left: auto;
+        top: auto;
+        width: 60%;
+        height: auto;
+        margin: 10px auto;
+        display: block;
+    }
+
+    #content1 {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    #content2 {
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #content2 p {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .btns {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #btn1, #btn2 {
+        flex: 1;
+        max-width: 150px;
+        font-size: 14px;
+    }
+
+    #img2 {
+        position: relative; /* Relative for stacking */
+        left: auto;
+        top: auto;
+        width: 100%;
+        max-width: 300px; /* Limit size */
+        height: auto;
+        align-self: center;
+        margin-top: 20px;
+        order: 2; /* Image after text */
+    }
+
+    /* Mobile Rating: Centered, Stacked Vertically */
+    #rating {
+        display: flex;
+        flex-direction: column; /* Stack vertically for mobile */
+        align-items: center;
+        justify-content: center;
+        position: relative; /* Relative positioning */
+        top: auto;
+        left: auto;
+        gap: 10px; /* Smaller gap */
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 20px auto; /* Center horizontally */
+        max-width: 200px;
+        width: 90%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #rating p {
+        font-size: 36px; /* Smaller for mobile */
+        margin: 0;
+    }
+
+    #star {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    #star p {
+        font-size: 18px; /* Smaller text */
+        margin: 0;
+    }
+
+    #box2 {
+        padding: 40px 5%;
+        height: auto;
+    }
+
+    #part1-1 {
+        left: 0;
+        margin: 0 auto 20px;
+        display: block;
+        text-align: center;
+    }
+
+    #part1-2 p {
+        font-size: 22px;
+    }
+
+    #part2 {
+        flex-direction: column; /* Single column */
+        align-items: center;
+        gap: 15px;
+    }
+
+    #card1, #card2, #card3, #card4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+       
